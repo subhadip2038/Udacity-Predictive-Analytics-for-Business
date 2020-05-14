@@ -1,0 +1,42 @@
+    
+
+Call:
+glm(formula = `Credit-Application-Result` ~ ., family = binomial, 
+    data = credit_train)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.0444  -0.7882  -0.5012   0.8949   2.5343  
+
+Coefficients:
+                                                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                                      -2.131e+00  8.908e-01  -2.392  0.01674 *  
+`Account-Balance`Some Balance                    -1.294e+00  2.941e-01  -4.401 1.08e-05 ***
+`Duration-of-Credit-Month`                        1.247e-02  1.299e-02   0.960  0.33707    
+`Payment-Status-of-Previous-Credit`Paid Up        7.267e-01  3.542e-01   2.051  0.04023 *  
+`Payment-Status-of-Previous-Credit`Some Problems  1.528e+00  5.135e-01   2.976  0.00292 ** 
+PurposeNew car                                   -1.377e+00  5.835e-01  -2.360  0.01826 *  
+PurposeOther                                      7.841e-04  9.296e-01   0.001  0.99933    
+PurposeUsed car                                  -4.672e-01  3.708e-01  -1.260  0.20769    
+`Credit-Amount`                                   7.637e-05  6.587e-05   1.159  0.24627    
+`Value-Savings-Stocks`less than 100 pound        -1.892e-01  5.294e-01  -0.357  0.72081    
+`Value-Savings-Stocks`None                        6.282e-01  3.080e-01   2.040  0.04138 *  
+`Length-of-current-employment`1-4 yrs            -8.541e-01  3.808e-01  -2.243  0.02492 *  
+`Length-of-current-employment`4-7 yrs            -2.933e-01  3.616e-01  -0.811  0.41732    
+`Instalment-per-cent`                             1.164e-01  1.324e-01   0.879  0.37923    
+`Most-valuable-available-asset`                   2.658e-01  1.579e-01   1.683  0.09233 .  
+`Age-years`                                      -3.930e-03  1.354e-02  -0.290  0.77160    
+`Type-of-apartment`2                             -1.272e-01  3.435e-01  -0.370  0.71113    
+`Type-of-apartment`3                             -3.546e-01  6.026e-01  -0.588  0.55622    
+`No-of-Credits-at-this-Bank`More than 1           2.486e-01  3.455e-01   0.719  0.47187    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 435.74  on 349  degrees of freedom
+Residual deviance: 360.09  on 331  degrees of freedom
+AIC: 398.09
+
+Number of Fisher Scoring iterations: 4
+

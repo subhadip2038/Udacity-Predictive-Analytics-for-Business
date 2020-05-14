@@ -1,0 +1,11 @@
+Call:
+ randomForest(x = credit_train[2:13], y = credit_train$`Credit-Application-Result`,ntree = 1500, mtry = 5, data = credit_train) 
+               Type of random forest: classification
+                     Number of trees: 1500
+No. of variables tried at each split: 5
+
+        OOB estimate of  error rate: 22%
+Confusion matrix:
+                 Creditworthy Non-Creditworthy class.error
+Creditworthy              227               20  0.08097166
+Non-Creditworthy           57               46  0.55339806

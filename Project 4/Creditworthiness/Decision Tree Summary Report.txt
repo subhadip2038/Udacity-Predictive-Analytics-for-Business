@@ -1,0 +1,219 @@
+Call:
+rpart(formula = `Credit-Application-Result` ~ ., data = credit_train, 
+    control = (cp = 0))
+  n= 350 
+
+          CP nsplit rel error    xerror       xstd
+1 0.07575758      0 1.0000000 1.0000000 0.07895420
+2 0.03636364      3 0.7727273 0.8454545 0.07512445
+3 0.03181818      5 0.7000000 0.9272727 0.07728571
+4 0.01818182      7 0.6363636 0.9454545 0.07772442
+5 0.01000000      9 0.6000000 0.9818182 0.07855844
+
+Variable importance
+         Duration-of-Credit-Month                   Account-Balance                     Credit-Amount              Value-Savings-Stocks 
+                               23                                19                                14                                12 
+Payment-Status-of-Previous-Credit      Length-of-current-employment                           Purpose                         Age-years 
+                                7                                 7                                 6                                 5 
+    Most-valuable-available-asset        No-of-Credits-at-this-Bank               Instalment-per-cent 
+                                4                                 3                                 1 
+
+Node number 1: 350 observations,    complexity param=0.07575758
+  predicted class=Creditworthy      expected loss=0.3142857  P(node) =1
+    class counts:   240   110
+   probabilities: 0.686 0.314 
+  left son=2 (157 obs) right son=3 (193 obs)
+  Primary splits:
+      Account-Balance                   splits as  RL,          improve=13.689390, (0 missing)
+      Payment-Status-of-Previous-Credit splits as  LLR,         improve= 8.077640, (0 missing)
+      Credit-Amount                     < 3780.5  to the left,  improve= 5.930542, (0 missing)
+      Value-Savings-Stocks              splits as  LLR,         improve= 4.730002, (0 missing)
+      Duration-of-Credit-Month          < 26.5    to the left,  improve= 4.556217, (0 missing)
+  Surrogate splits:
+      Value-Savings-Stocks              splits as  LRR,         agree=0.629, adj=0.172, (0 split)
+      Length-of-current-employment      splits as  RRL,         agree=0.580, adj=0.064, (0 split)
+      Age-years                         < 35.5    to the right, agree=0.577, adj=0.057, (0 split)
+      Duration-of-Credit-Month          < 7.5     to the left,  agree=0.560, adj=0.019, (0 split)
+      Payment-Status-of-Previous-Credit splits as  LRR,         agree=0.557, adj=0.013, (0 split)
+
+Node number 2: 157 observations
+  predicted class=Creditworthy      expected loss=0.1592357  P(node) =0.4485714
+    class counts:   132    25
+   probabilities: 0.841 0.159 
+
+Node number 3: 193 observations,    complexity param=0.07575758
+  predicted class=Creditworthy      expected loss=0.4404145  P(node) =0.5514286
+    class counts:   108    85
+   probabilities: 0.560 0.440 
+  left son=6 (73 obs) right son=7 (120 obs)
+  Primary splits:
+      Duration-of-Credit-Month          < 13      to the left,  improve=6.505104, (0 missing)
+      Payment-Status-of-Previous-Credit splits as  LLR,         improve=5.253794, (0 missing)
+      Credit-Amount                     < 3740    to the left,  improve=3.592474, (0 missing)
+      Most-valuable-available-asset     < 1.5     to the left,  improve=3.269885, (0 missing)
+      Value-Savings-Stocks              splits as  LLR,         improve=2.997107, (0 missing)
+  Surrogate splits:
+      Credit-Amount                 < 1724    to the left,  agree=0.782, adj=0.425, (0 split)
+      Most-valuable-available-asset < 1.5     to the left,  agree=0.648, adj=0.068, (0 split)
+      Age-years                     < 50.5    to the right, agree=0.648, adj=0.068, (0 split)
+
+Node number 6: 73 observations,    complexity param=0.01818182
+  predicted class=Creditworthy      expected loss=0.2739726  P(node) =0.2085714
+    class counts:    53    20
+   probabilities: 0.726 0.274 
+  left son=12 (49 obs) right son=13 (24 obs)
+  Primary splits:
+      Most-valuable-available-asset     < 2.5     to the left,  improve=2.4305520, (0 missing)
+      Payment-Status-of-Previous-Credit splits as  LRR,         improve=2.1106150, (0 missing)
+      Credit-Amount                     < 971     to the right, improve=2.0535740, (0 missing)
+      Age-years                         < 58.5    to the left,  improve=1.3701000, (0 missing)
+      Instalment-per-cent               < 2.5     to the right, improve=0.7298714, (0 missing)
+  Surrogate splits:
+      Payment-Status-of-Previous-Credit splits as  LLR,         agree=0.712, adj=0.125, (0 split)
+      Purpose                           splits as  LRLL,        agree=0.699, adj=0.083, (0 split)
+      Length-of-current-employment      splits as  LLR,         agree=0.699, adj=0.083, (0 split)
+      Age-years                         < 67.5    to the left,  agree=0.699, adj=0.083, (0 split)
+      Telephone                         < 1.5     to the left,  agree=0.699, adj=0.083, (0 split)
+
+Node number 7: 120 observations,    complexity param=0.07575758
+  predicted class=Non-Creditworthy  expected loss=0.4583333  P(node) =0.3428571
+    class counts:    55    65
+   probabilities: 0.458 0.542 
+  left son=14 (41 obs) right son=15 (79 obs)
+  Primary splits:
+      Value-Savings-Stocks              splits as  LLR,         improve=6.282932, (0 missing)
+      Length-of-current-employment      splits as  RLL,         improve=2.917638, (0 missing)
+      Payment-Status-of-Previous-Credit splits as  LRR,         improve=2.118545, (0 missing)
+      Age-years                         < 31.5    to the right, improve=1.904762, (0 missing)
+      Instalment-per-cent               < 3.5     to the left,  improve=1.821096, (0 missing)
+  Surrogate splits:
+      Duration-of-Credit-Month < 54      to the right, agree=0.675, adj=0.049, (0 split)
+      Credit-Amount            < 12053.5 to the right, agree=0.675, adj=0.049, (0 split)
+
+Node number 12: 49 observations
+  predicted class=Creditworthy      expected loss=0.1836735  P(node) =0.14
+    class counts:    40     9
+   probabilities: 0.816 0.184 
+
+Node number 13: 24 observations,    complexity param=0.01818182
+  predicted class=Creditworthy      expected loss=0.4583333  P(node) =0.06857143
+    class counts:    13    11
+   probabilities: 0.542 0.458 
+  left son=26 (8 obs) right son=27 (16 obs)
+  Primary splits:
+      Payment-Status-of-Previous-Credit splits as  LRR,         improve=2.6666670, (0 missing)
+      Credit-Amount                     < 1113    to the right, improve=1.2948180, (0 missing)
+      Instalment-per-cent               < 2.5     to the right, improve=1.2500000, (0 missing)
+      Purpose                           splits as  RL-L,        improve=0.5889356, (0 missing)
+      No-of-Credits-at-this-Bank        splits as  RL,          improve=0.5889356, (0 missing)
+  Surrogate splits:
+      No-of-Credits-at-this-Bank splits as  RL,   agree=0.875, adj=0.625, (0 split)
+      Purpose                    splits as  RL-R, agree=0.708, adj=0.125, (0 split)
+      Value-Savings-Stocks       splits as  RLR,  agree=0.708, adj=0.125, (0 split)
+
+Node number 14: 41 observations,    complexity param=0.03636364
+  predicted class=Creditworthy      expected loss=0.3170732  P(node) =0.1171429
+    class counts:    28    13
+   probabilities: 0.683 0.317 
+  left son=28 (17 obs) right son=29 (24 obs)
+  Primary splits:
+      Length-of-current-employment      splits as  RLL,         improve=3.873745, (0 missing)
+      Age-years                         < 30.5    to the right, improve=3.679907, (0 missing)
+      Duration-of-Credit-Month          < 43.5    to the right, improve=1.998522, (0 missing)
+      Instalment-per-cent               < 2.5     to the left,  improve=1.148254, (0 missing)
+      Payment-Status-of-Previous-Credit splits as  LRR,         improve=1.070383, (0 missing)
+  Surrogate splits:
+      Credit-Amount              < 2422.5  to the left,  agree=0.707, adj=0.294, (0 split)
+      Duration-of-Credit-Month   < 22.5    to the left,  agree=0.659, adj=0.176, (0 split)
+      Age-years                  < 29.5    to the right, agree=0.659, adj=0.176, (0 split)
+      Instalment-per-cent        < 3.5     to the right, agree=0.610, adj=0.059, (0 split)
+      No-of-Credits-at-this-Bank splits as  RL,          agree=0.610, adj=0.059, (0 split)
+
+Node number 15: 79 observations,    complexity param=0.03181818
+  predicted class=Non-Creditworthy  expected loss=0.3417722  P(node) =0.2257143
+    class counts:    27    52
+   probabilities: 0.342 0.658 
+  left son=30 (24 obs) right son=31 (55 obs)
+  Primary splits:
+      Purpose                           splits as  RLRL,        improve=2.754910, (0 missing)
+      Duration-of-Credit-Month          < 33      to the left,  improve=1.944304, (0 missing)
+      Instalment-per-cent               < 3.5     to the left,  improve=1.890557, (0 missing)
+      Payment-Status-of-Previous-Credit splits as  LLR,         improve=1.346502, (0 missing)
+      Credit-Amount                     < 2254    to the right, improve=0.955044, (0 missing)
+  Surrogate splits:
+      Credit-Amount < 7003    to the right, agree=0.722, adj=0.083, (0 split)
+      Age-years     < 21.5    to the left,  agree=0.709, adj=0.042, (0 split)
+
+Node number 26: 8 observations
+  predicted class=Creditworthy      expected loss=0.125  P(node) =0.02285714
+    class counts:     7     1
+   probabilities: 0.875 0.125 
+
+Node number 27: 16 observations
+  predicted class=Non-Creditworthy  expected loss=0.375  P(node) =0.04571429
+    class counts:     6    10
+   probabilities: 0.375 0.625 
+
+Node number 28: 17 observations
+  predicted class=Creditworthy      expected loss=0.05882353  P(node) =0.04857143
+    class counts:    16     1
+   probabilities: 0.941 0.059 
+
+Node number 29: 24 observations,    complexity param=0.03636364
+  predicted class=Creditworthy      expected loss=0.5  P(node) =0.06857143
+    class counts:    12    12
+   probabilities: 0.500 0.500 
+  left son=58 (8 obs) right son=59 (16 obs)
+  Primary splits:
+      Duration-of-Credit-Month          < 40.5    to the right, improve=6.0000000, (0 missing)
+      Credit-Amount                     < 4316    to the right, improve=4.1118880, (0 missing)
+      Age-years                         < 30.5    to the right, improve=2.2222220, (0 missing)
+      Instalment-per-cent               < 2.5     to the left,  improve=2.0979020, (0 missing)
+      Payment-Status-of-Previous-Credit splits as  LRL,         improve=0.3428571, (0 missing)
+  Surrogate splits:
+      Credit-Amount                     < 4463.5  to the right, agree=0.917, adj=0.750, (0 split)
+      Payment-Status-of-Previous-Credit splits as  LRR,         agree=0.750, adj=0.250, (0 split)
+      Purpose                           splits as  RRLR,        agree=0.708, adj=0.125, (0 split)
+      Age-years                         < 30.5    to the right, agree=0.708, adj=0.125, (0 split)
+
+Node number 30: 24 observations,    complexity param=0.03181818
+  predicted class=Creditworthy      expected loss=0.4583333  P(node) =0.06857143
+    class counts:    13    11
+   probabilities: 0.542 0.458 
+  left son=60 (15 obs) right son=61 (9 obs)
+  Primary splits:
+      Duration-of-Credit-Month          < 31      to the left,  improve=2.9388890, (0 missing)
+      Credit-Amount                     < 4378    to the left,  improve=2.0833330, (0 missing)
+      Age-years                         < 32.5    to the right, improve=0.5889356, (0 missing)
+      No-of-Credits-at-this-Bank        splits as  RL,          improve=0.5889356, (0 missing)
+      Payment-Status-of-Previous-Credit splits as  LRR,         improve=0.4500000, (0 missing)
+  Surrogate splits:
+      Credit-Amount                     < 4762    to the left,  agree=0.750, adj=0.333, (0 split)
+      Payment-Status-of-Previous-Credit splits as  LLR,         agree=0.667, adj=0.111, (0 split)
+      Instalment-per-cent               < 2.5     to the left,  agree=0.667, adj=0.111, (0 split)
+      Age-years                         < 45      to the left,  agree=0.667, adj=0.111, (0 split)
+
+Node number 31: 55 observations
+  predicted class=Non-Creditworthy  expected loss=0.2545455  P(node) =0.1571429
+    class counts:    14    41
+   probabilities: 0.255 0.745 
+
+Node number 58: 8 observations
+  predicted class=Creditworthy      expected loss=0  P(node) =0.02285714
+    class counts:     8     0
+   probabilities: 1.000 0.000 
+
+Node number 59: 16 observations
+  predicted class=Non-Creditworthy  expected loss=0.25  P(node) =0.04571429
+    class counts:     4    12
+   probabilities: 0.250 0.750 
+
+Node number 60: 15 observations
+  predicted class=Creditworthy      expected loss=0.2666667  P(node) =0.04285714
+    class counts:    11     4
+   probabilities: 0.733 0.267 
+
+Node number 61: 9 observations
+  predicted class=Non-Creditworthy  expected loss=0.2222222  P(node) =0.02571429
+    class counts:     2     7
+   probabilities: 0.222 0.778 
