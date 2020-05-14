@@ -1,0 +1,100 @@
+<!-- R Commander Markdown Template -->
+
+Replace with Main Title
+=======================
+
+### Your Name
+
+### `r as.character(Sys.Date())`
+
+```{r echo=FALSE}
+# include this code chunk as-is to set options
+knitr::opts_chunk$set(comment=NA, prompt=TRUE, out.width=750, fig.height=8, fig.width=8)
+library(Rcmdr)
+library(car)
+library(RcmdrMisc)
+```
+
+
+```{r echo=FALSE}
+# include this code chunk as-is to enable 3D graphs
+library(rgl)
+knitr::knit_hooks$set(webgl = hook_webgl)
+```
+
+```{r}
+Boxplot( ~ total_sales, data=training_data_set, id=list(method="y"))
+```
+
+```{r}
+Boxplot( ~ total_sales, data=training_data_set, id=list(method="y"))
+```
+
+```{r}
+Boxplot( ~ total_sales, data=training_data_set, id=list(method="y"))
+```
+
+```{r}
+library(aplpack, pos=70)
+library(gganimate, pos=71)
+library(ggforce, pos=72)
+```
+
+```{r}
+summary(training_data_set)
+```
+
+
+```{r}
+Boxplot( ~ Total.Families, data=training_data_set, id=list(method="y"))
+```
+
+```{r}
+Boxplot( ~ Population.Density, data=training_data_set, id=list(method="y"))
+```
+
+```{r}
+Boxplot( ~ land_area, data=training_data_set, id=list(method="y"))
+```
+
+```{r}
+Boxplot( ~ Households.with.Under.18, data=training_data_set, 
+  id=list(method="y"))
+```
+
+```{r}
+scatterplotMatrix(~Households.with.Under.18+land_area+Population.Density+Total.Families+total_sales,
+   regLine=FALSE, smooth=FALSE, diagonal=list(method="density"), 
+  data=training_data_set)
+```
+
+```{r}
+scatterplotMatrix(~Households.with.Under.18+land_area+Population.Density+Total.Families+total_sales,
+   regLine=FALSE, smooth=FALSE, diagonal=list(method="boxplot"), 
+  data=training_data_set)
+```
+
+```{r}
+scatterplotMatrix(~Households.with.Under.18+land_area+Population.Density+Total.Families+total_sales,
+   regLine=FALSE, smooth=FALSE, diagonal=list(method="oned"), 
+  data=training_data_set)
+```
+
+```{r}
+scatterplotMatrix(~Households.with.Under.18+land_area+Population.Density+Total.Families+total_sales,
+   regLine=FALSE, smooth=FALSE, diagonal=list(method="oned"), 
+  data=training_data_set)
+```
+
+```{r}
+scatterplotMatrix(~Households.with.Under.18+land_area+Population.Density+Total.Families+total_sales,
+   regLine=TRUE, smooth=FALSE, diagonal=list(method="oned"), 
+  data=training_data_set)
+```
+
+```{r}
+scatterplotMatrix(~Households.with.Under.18+land_area+Population.Density+Total.Families+total_sales,
+   regLine=TRUE, smooth=FALSE, diagonal=list(method="oned"), 
+  data=training_data_set)
+```
+
